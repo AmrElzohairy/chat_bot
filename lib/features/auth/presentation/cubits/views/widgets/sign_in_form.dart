@@ -1,4 +1,3 @@
-
 import 'package:chat_bot/core/utils/app_images.dart';
 import 'package:chat_bot/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +7,7 @@ import '../../../../../../core/utils/spacing_widgets.dart';
 import '../../../../../../core/widgets/custom_password_field.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm({
-    super.key,
-  });
+  const SignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {

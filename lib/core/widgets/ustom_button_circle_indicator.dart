@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButtonCircleIndicator extends StatelessWidget {
-  const CustomButtonCircleIndicator({
-    super.key,
-  });
+  const CustomButtonCircleIndicator({super.key});
 
   @override
   Widget build(BuildContext context) {
