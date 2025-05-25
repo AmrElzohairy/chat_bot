@@ -1,6 +1,7 @@
 import 'package:chat_bot/core/helpers/service_locator.dart';
 import 'package:chat_bot/features/auth/data/repo/auth_repo.dart';
 import 'package:chat_bot/features/auth/presentation/cubits/sign_in_cubit/sign_in_cubit.dart';
+import 'package:chat_bot/features/auth/presentation/cubits/sign_up_cubit/sign_up_cubit.dart';
 import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
 import 'package:chat_bot/features/auth/presentation/views/sign_up_view.dart';
 import 'package:chat_bot/features/on_boarding/presentation/views/on_boarding_view.dart';
@@ -29,7 +30,11 @@ abstract class AppRouter {
       GoRoute(
         path: SignUpView.routeName,
         name: SignUpView.routeName,
-        builder: (context, state) => const SignUpView(),
+        builder:
+            (context, state) => BlocProvider(
+              create: (context) => SignUpCubit(authRepo: getIt<AuthRepo>()),
+              child: const SignUpView(),
+            ),
       ),
     ],
     errorBuilder:
