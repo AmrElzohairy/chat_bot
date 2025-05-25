@@ -1,11 +1,13 @@
 import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:chat_bot/core/utils/app_images.dart';
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
+import 'package:chat_bot/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/helpers/get_current_brightness.dart';
+import '../../../../../core/widgets/custom_password_field.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -48,12 +50,20 @@ class SignInView extends StatelessWidget {
                 ),
               ),
               VerticalSpace(height: 40),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.r),
-                  ),
+              CustomTextFormField(
+                labelText: "Email or Username",
+                controller: TextEditingController(),
+                prefixIcon: SvgPicture.asset(
+                  Assets.imagesMailOutline,
+                  fit: BoxFit.scaleDown,
+                ),
+              ),
+              CustomPasswordField(
+                labelText: "Password",
+                controller: TextEditingController(),
+                prefixIcon: SvgPicture.asset(
+                  Assets.imagesLockClosedOutline,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
             ],
