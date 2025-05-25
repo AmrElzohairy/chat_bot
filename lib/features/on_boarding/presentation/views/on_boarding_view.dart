@@ -1,6 +1,6 @@
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/core/widgets/custom_app_button.dart';
-import 'package:chat_bot/features/auth/presentation/cubits/views/sign_in_view.dart';
+import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
 import 'package:chat_bot/features/on_boarding/presentation/views/widgets/on_boarding_image.dart';
 import 'package:chat_bot/features/on_boarding/presentation/views/widgets/on_boarding_text.dart';
 import 'package:flutter/material.dart';

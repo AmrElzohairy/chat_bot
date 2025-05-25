@@ -3,11 +3,11 @@ import 'package:chat_bot/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../../core/utils/spacing_widgets.dart';
-import '../../../../../../core/widgets/custom_password_field.dart';
+import '../../../../../core/utils/spacing_widgets.dart';
+import '../../../../../core/widgets/custom_password_field.dart';
 
-class SignUpForm extends StatelessWidget {
-  const SignUpForm({super.key});
+class SignInForm extends StatelessWidget {
+  const SignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,25 +15,7 @@ class SignUpForm extends StatelessWidget {
       child: Column(
         children: [
           CustomTextFormField(
-            labelText: "Full Name",
-            controller: TextEditingController(),
-            prefixIcon: SvgPicture.asset(
-              Assets.imagesPersonOutline,
-              fit: BoxFit.scaleDown,
-            ),
-          ),
-          VerticalSpace(height: 20),
-          CustomTextFormField(
-            labelText: "Username",
-            controller: TextEditingController(),
-            prefixIcon: SvgPicture.asset(
-              Assets.imagesPersonOutline,
-              fit: BoxFit.scaleDown,
-            ),
-          ),
-          VerticalSpace(height: 20),
-          CustomTextFormField(
-            labelText: "Email",
+            labelText: "Email or Username",
             controller: TextEditingController(),
             prefixIcon: SvgPicture.asset(
               Assets.imagesMailOutline,

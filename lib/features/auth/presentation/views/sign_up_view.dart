@@ -1,12 +1,12 @@
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/core/widgets/custom_app_button.dart';
-import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/row_with_primary_text.dart';
-import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/sign_up_form.dart';
-import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/sign_up_texts.dart';
+import 'package:chat_bot/features/auth/presentation/views/widgets/row_with_primary_text.dart';
+import 'package:chat_bot/features/auth/presentation/views/widgets/sign_up_form.dart';
+import 'package:chat_bot/features/auth/presentation/views/widgets/sign_up_texts.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/widgets/app_logo_widget.dart';
+import '../../../../core/widgets/app_logo_widget.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/helpers/get_current_brightness.dart';
-import '../../../../../../core/utils/app_colors.dart';
+import '../../../../../core/helpers/get_current_brightness.dart';
+import '../../../../../core/utils/app_colors.dart';
 
 class SignInTexts extends StatelessWidget {
   const SignInTexts({super.key});

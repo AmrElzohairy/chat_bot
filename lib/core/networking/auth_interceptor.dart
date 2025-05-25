@@ -1,7 +1,7 @@
 import 'package:chat_bot/core/cache/cache_constants.dart';
 import 'package:chat_bot/core/cache/cache_helper.dart';
 import 'package:chat_bot/core/routing/app_router.dart';
-import 'package:chat_bot/features/auth/presentation/cubits/views/sign_in_view.dart';
+import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
 import 'package:dio/dio.dart';
 
 class AuthInterceptor extends Interceptor {

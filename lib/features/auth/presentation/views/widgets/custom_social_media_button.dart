@@ -2,8 +2,8 @@ import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/helpers/get_current_brightness.dart';
-import '../../../../../../core/utils/spacing_widgets.dart';
+import '../../../../../core/helpers/get_current_brightness.dart';
+import '../../../../../core/utils/spacing_widgets.dart';
 
 class CustomSocialMediaButton extends StatelessWidget {
   const CustomSocialMediaButton({
