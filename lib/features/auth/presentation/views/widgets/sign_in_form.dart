@@ -7,8 +7,13 @@ import '../../../../../core/utils/spacing_widgets.dart';
 import '../../../../../core/widgets/custom_password_field.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm({super.key, required this.formKey, required this.emailController, required this.passwordController});
-final GlobalKey<FormState> formKey;
+  const SignInForm({
+    super.key,
+    required this.formKey,
+    required this.emailController,
+    required this.passwordController,
+  });
+  final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
   final TextEditingController passwordController;
   @override
