@@ -72,7 +72,7 @@ class SignInView extends StatelessWidget {
               CustomAppButton(
                 buttonText: 'Sign In',
                 onPressed: () {},
-                isLoading: true,
+                isLoading: false,
               ),
             ],
           ),
