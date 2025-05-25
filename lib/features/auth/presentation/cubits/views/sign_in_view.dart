@@ -47,6 +47,15 @@ class SignInView extends StatelessWidget {
                   ),
                 ),
               ),
+              VerticalSpace(height: 40),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
