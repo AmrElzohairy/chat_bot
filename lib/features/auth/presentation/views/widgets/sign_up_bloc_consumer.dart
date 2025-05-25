@@ -31,13 +31,6 @@ class SignUpBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                'Sign up successful! , Check your email for verification.',
-              ),
-            ),
-          );
           customSnackBar(
             context,
             'Sign up successful! , Check your email for verification.',
