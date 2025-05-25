@@ -14,26 +14,28 @@ class SignInForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomTextFormField(
-          labelText: "Email or Username",
-          controller: TextEditingController(),
-          prefixIcon: SvgPicture.asset(
-            Assets.imagesMailOutline,
-            fit: BoxFit.scaleDown,
+    return Form(
+      child: Column(
+        children: [
+          CustomTextFormField(
+            labelText: "Email or Username",
+            controller: TextEditingController(),
+            prefixIcon: SvgPicture.asset(
+              Assets.imagesMailOutline,
+              fit: BoxFit.scaleDown,
+            ),
           ),
-        ),
-        VerticalSpace(height: 20),
-        CustomPasswordField(
-          labelText: "Password",
-          controller: TextEditingController(),
-          prefixIcon: SvgPicture.asset(
-            Assets.imagesLockClosedOutline,
-            fit: BoxFit.scaleDown,
+          VerticalSpace(height: 20),
+          CustomPasswordField(
+            labelText: "Password",
+            controller: TextEditingController(),
+            prefixIcon: SvgPicture.asset(
+              Assets.imagesLockClosedOutline,
+              fit: BoxFit.scaleDown,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
