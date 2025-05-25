@@ -7,16 +7,19 @@ import '../../../../../core/utils/spacing_widgets.dart';
 import '../../../../../core/widgets/custom_password_field.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm({super.key});
-
+  const SignInForm({super.key, required this.formKey, required this.emailController, required this.passwordController});
+final GlobalKey<FormState> formKey;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: formKey,
       child: Column(
         children: [
           CustomTextFormField(
             labelText: "Email or Username",
-            controller: TextEditingController(),
+            controller: emailController,
             prefixIcon: SvgPicture.asset(
               Assets.imagesMailOutline,
               fit: BoxFit.scaleDown,
@@ -25,7 +28,7 @@ class SignInForm extends StatelessWidget {
           VerticalSpace(height: 20),
           CustomPasswordField(
             labelText: "Password",
-            controller: TextEditingController(),
+            controller: passwordController,
             prefixIcon: SvgPicture.asset(
               Assets.imagesLockClosedOutline,
               fit: BoxFit.scaleDown,

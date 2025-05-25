@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 class SignInModel extends Equatable {
   final dynamic message;
   final String? authProvider;
-  final List<String>? roles;
   final bool? isAuthenticated;
   final String? token;
   final String? refreshToken;
@@ -18,7 +17,6 @@ class SignInModel extends Equatable {
   const SignInModel({
     this.message,
     this.authProvider,
-    this.roles,
     this.isAuthenticated,
     this.token,
     this.refreshToken,
@@ -34,7 +32,6 @@ class SignInModel extends Equatable {
   factory SignInModel.fromJson(Map<String, dynamic> json) => SignInModel(
     message: json['message'] as dynamic,
     authProvider: json['authProvider'] as String?,
-    roles: json['roles'] as List<String>?,
     isAuthenticated: json['isAuthenticated'] as bool?,
     token: json['token'] as String?,
     refreshToken: json['refreshToken'] as String?,
@@ -53,7 +50,6 @@ class SignInModel extends Equatable {
   Map<String, dynamic> toJson() => {
     'message': message,
     'authProvider': authProvider,
-    'roles': roles,
     'isAuthenticated': isAuthenticated,
     'token': token,
     'refreshToken': refreshToken,
@@ -71,7 +67,6 @@ class SignInModel extends Equatable {
     return [
       message,
       authProvider,
-      roles,
       isAuthenticated,
       token,
       refreshToken,
