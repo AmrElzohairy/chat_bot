@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 class ApiService {
   final Dio dio;
 
-  ApiService(this.dio) {
+  ApiService({required this.dio}) {
     dio.options.baseUrl = ApiKeys.baserUrl;
     dio.interceptors.add(AuthInterceptor());
     dio.interceptors.add(

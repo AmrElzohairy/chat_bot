@@ -1,9 +1,14 @@
+import 'package:chat_bot/core/cache/cache_helper.dart';
+import 'package:chat_bot/core/helpers/service_locator.dart';
 import 'package:chat_bot/core/routing/app_router.dart';
 import 'package:chat_bot/core/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
+  setupServiceLocator();
   runApp(ChatBot());
 }
 
