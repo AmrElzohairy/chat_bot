@@ -1,6 +1,7 @@
 import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:chat_bot/core/utils/app_images.dart';
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
+import 'package:chat_bot/core/widgets/custom_app_button.dart';
 import 'package:chat_bot/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,6 +59,7 @@ class SignInView extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                 ),
               ),
+              VerticalSpace(height: 20),
               CustomPasswordField(
                 labelText: "Password",
                 controller: TextEditingController(),
@@ -65,6 +67,12 @@ class SignInView extends StatelessWidget {
                   Assets.imagesLockClosedOutline,
                   fit: BoxFit.scaleDown,
                 ),
+              ),
+              VerticalSpace(height: 20),
+              CustomAppButton(
+                buttonText: 'Sign In',
+                onPressed: () {},
+                isLoading: true,
               ),
             ],
           ),
