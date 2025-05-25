@@ -5,6 +5,7 @@ import 'package:chat_bot/core/widgets/custom_app_button.dart';
 import 'package:chat_bot/core/widgets/custom_text_form_field.dart';
 import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/custom_social_media_button.dart';
 import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/or_widget.dart';
+import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/row_with_primary_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,7 +24,7 @@ class SignInView extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              VerticalSpace(height: 70),
+              VerticalSpace(height: 90),
               Align(
                 alignment: Alignment.center,
                 child: SvgPicture.asset(Assets.imagesAppLogo),
@@ -86,6 +87,12 @@ class SignInView extends StatelessWidget {
                   Assets.imagesGoogle,
                   fit: BoxFit.scaleDown,
                 ),
+              ),
+              VerticalSpace(height: 20),
+              RowWithPrimaryText(
+                text: 'Don\'t have an account? ',
+                primaryText: 'Sign Up',
+                onTap: () {},
               ),
             ],
           ),
