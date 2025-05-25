@@ -1,8 +1,8 @@
-import 'dart:developer';
-
 import 'package:chat_bot/core/cache/cache_constants.dart';
 import 'package:chat_bot/core/cache/cache_helper.dart';
+import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:chat_bot/core/widgets/custom_app_button.dart';
+import 'package:chat_bot/core/widgets/custom_snac_bar.dart';
 import 'package:chat_bot/features/auth/data/models/sign_in_body_model.dart';
 import 'package:chat_bot/features/auth/presentation/cubits/sign_in_cubit/sign_in_cubit.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +26,13 @@ class SignInBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is SignInSuccess) {
           CacheHelper.set(key: CacheKeys.isAuthenticated, value: true);
+          customSnackBar(context, 'Sign in successful!', AppColors.green);
         } else if (state is SignInFailure) {
-          log("Sign in Failure: ${state.errMessage}");
+          customSnackBar(
+            context,
+            'Sign in failed: ${state.errMessage}',
+            AppColors.red,
+          );
         }
       },
       builder: (context, state) {

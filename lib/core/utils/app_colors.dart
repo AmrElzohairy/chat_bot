@@ -9,4 +9,6 @@ abstract class AppColors {
   static const darkSecondaryText = Color(0xFF6B6B6B);
   static const lightTextFieldBorderColor = Color(0xFFCBD5E1);
   static const darkTextFieldBorderColor = Color(0xFF979797);
+  static const green = Color(0xFF4CAF50);
+  static const red = Color(0xFFF44336);
 }

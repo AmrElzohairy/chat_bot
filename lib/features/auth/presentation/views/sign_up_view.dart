@@ -1,6 +1,6 @@
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
-import 'package:chat_bot/core/widgets/custom_app_button.dart';
 import 'package:chat_bot/features/auth/presentation/views/widgets/row_with_primary_text.dart';
+import 'package:chat_bot/features/auth/presentation/views/widgets/sign_up_bloc_consumer.dart';
 import 'package:chat_bot/features/auth/presentation/views/widgets/sign_up_form.dart';
 import 'package:chat_bot/features/auth/presentation/views/widgets/sign_up_texts.dart';
 import 'package:flutter/material.dart';
@@ -68,10 +68,12 @@ class _SignUpViewState extends State<SignUpView> {
                 confirmPasswordController: confirmPasswordController,
               ),
               VerticalSpace(height: 30),
-              CustomAppButton(
-                buttonText: 'Sign Up',
-                onPressed: () {},
-                isLoading: false,
+              SignUpBlocConsumer(
+                formKey: formKey,
+                fullNameController: fullNameController,
+                usernameController: usernameController,
+                emailController: emailController,
+                passwordController: passwordController,
               ),
               VerticalSpace(height: 20),
               RowWithPrimaryText(
