@@ -3,6 +3,8 @@ import 'package:chat_bot/core/utils/app_images.dart';
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/core/widgets/custom_app_button.dart';
 import 'package:chat_bot/core/widgets/custom_text_form_field.dart';
+import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/custom_social_media_button.dart';
+import 'package:chat_bot/features/auth/presentation/cubits/views/widgets/or_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -68,11 +70,22 @@ class SignInView extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                 ),
               ),
-              VerticalSpace(height: 20),
+              VerticalSpace(height: 30),
               CustomAppButton(
                 buttonText: 'Sign In',
                 onPressed: () {},
                 isLoading: false,
+              ),
+              VerticalSpace(height: 20),
+              OrWidget(),
+              VerticalSpace(height: 20),
+              CustomSocialMediaButton(
+                onTap: () {},
+                buttonText: 'Sign in with Google',
+                icon: SvgPicture.asset(
+                  Assets.imagesGoogle,
+                  fit: BoxFit.scaleDown,
+                ),
               ),
             ],
           ),
