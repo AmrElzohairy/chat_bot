@@ -8,9 +8,44 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/widgets/app_logo_widget.dart';
 
-class SignUpView extends StatelessWidget {
+class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
   static const routeName = '/sign_up_view';
+
+  @override
+  State<SignUpView> createState() => _SignUpViewState();
+}
+
+class _SignUpViewState extends State<SignUpView> {
+  late GlobalKey<FormState> formKey;
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+  late TextEditingController confirmPasswordController;
+  late TextEditingController usernameController;
+  late TextEditingController fullNameController;
+
+  @override
+  void initState() {
+    formKey = GlobalKey<FormState>();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    confirmPasswordController = TextEditingController();
+    usernameController = TextEditingController();
+    fullNameController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    usernameController.dispose();
+    fullNameController.dispose();
+    formKey.currentState?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +59,14 @@ class SignUpView extends StatelessWidget {
               VerticalSpace(height: 20),
               SignUpTexts(),
               VerticalSpace(height: 40),
-              SignUpForm(),
+              SignUpForm(
+                formKey: formKey,
+                fullNameController: fullNameController,
+                usernameController: usernameController,
+                emailController: emailController,
+                passwordController: passwordController,
+                confirmPasswordController: confirmPasswordController,
+              ),
               VerticalSpace(height: 30),
               CustomAppButton(
                 buttonText: 'Sign Up',

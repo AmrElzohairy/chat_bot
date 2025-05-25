@@ -29,6 +29,12 @@ class SignInForm extends StatelessWidget {
               Assets.imagesMailOutline,
               fit: BoxFit.scaleDown,
             ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your email or username';
+              }
+              return null;
+            },
           ),
           VerticalSpace(height: 20),
           CustomPasswordField(
@@ -38,6 +44,12 @@ class SignInForm extends StatelessWidget {
               Assets.imagesLockClosedOutline,
               fit: BoxFit.scaleDown,
             ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your password';
+              }
+              return null;
+            },
           ),
         ],
       ),
