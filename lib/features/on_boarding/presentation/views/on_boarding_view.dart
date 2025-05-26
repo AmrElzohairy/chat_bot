@@ -1,3 +1,5 @@
+import 'package:chat_bot/core/cache/cache_constants.dart';
+import 'package:chat_bot/core/cache/cache_helper.dart';
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/core/widgets/custom_app_button.dart';
 import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
@@ -152,6 +154,8 @@ class _OnBoardingViewState extends State<OnBoardingView>
                 child: CustomAppButton(
                   buttonText: 'Get Started',
                   onPressed: () {
+                    CacheHelper.set(
+                        key: CacheKeys.isOnBoardingSeen, value: true);
                     context.goNamed(SignInView.routeName);
                   },
                 ),
