@@ -233,7 +233,7 @@ class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
                     passwordController: passwordController,
                   ),
                 ),
-                VerticalSpace(height: 20),
+                VerticalSpace(height: 10),
                 // Animated Sign In Link
                 FadeTransition(
                   opacity: _linkFadeAnimation,
