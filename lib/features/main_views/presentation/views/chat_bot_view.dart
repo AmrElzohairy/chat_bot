@@ -1,5 +1,6 @@
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/bot_image_with_suggetions.dart';
+import 'package:chat_bot/features/main_views/presentation/views/widgets/chat_bot_field.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/chat_bubble_sliver_list.dart';
 import 'package:flutter/material.dart';
 
@@ -11,18 +12,23 @@ class ChatBotView extends StatelessWidget {
     return const Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 12.0),
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              backgroundColor: Colors.transparent,
-              centerTitle: true,
-              title: Text('Chat Bot'),
+        child: Stack(
+          children: [
+            CustomScrollView(
+              slivers: [
+                SliverAppBar(
+                  backgroundColor: Colors.transparent,
+                  centerTitle: true,
+                  title: Text('Chat Bot'),
+                ),
+                SliverToBoxAdapter(child: VerticalSpace(height: 20)),
+                SliverToBoxAdapter(child: BotImageWithSuggetions()),
+                SliverToBoxAdapter(child: VerticalSpace(height: 20)),
+                ChatBubbleSliverList(),
+                SliverToBoxAdapter(child: VerticalSpace(height: 80)),
+              ],
             ),
-            SliverToBoxAdapter(child: VerticalSpace(height: 20)),
-            SliverToBoxAdapter(child: BotImageWithSuggetions()),
-            SliverToBoxAdapter(child: VerticalSpace(height: 20)),
-            ChatBubbleSliverList(),
-            SliverToBoxAdapter(child: VerticalSpace(height: 20)),
+            Positioned(bottom: 0, left: 0, right: 0, child: ChatBotFiled()),
           ],
         ),
       ),
