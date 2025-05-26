@@ -11,4 +11,6 @@ abstract class AppColors {
   static const darkTextFieldBorderColor = Color(0xFF979797);
   static const green = Color(0xFF4CAF50);
   static const red = Color(0xFFF44336);
+  static const lightbotSuggetionColor = Color(0xFFEFEFEF);
+  static const darkbotSuggetionColor = Color(0xFF19191B);
 }

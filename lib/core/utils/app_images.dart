@@ -46,9 +46,17 @@ class Assets {
   /// assets/images/profile_icon.svg
   static const String imagesProfileIcon = "assets/images/profile_icon.svg";
 
+  /// Assets for imagesRobot
+  /// assets/images/robot.png
+  static const String imagesRobot = "assets/images/robot.png";
+
   /// Assets for imagesSavedIcon
   /// assets/images/saved_icon.svg
   static const String imagesSavedIcon = "assets/images/saved_icon.svg";
+
+  /// Assets for imagesThreeStarsIcon
+  /// assets/images/three_stars_icon.svg
+  static const String imagesThreeStarsIcon = "assets/images/three_stars_icon.svg";
 
   /// Assets for imagesUnion
   /// assets/images/Union.svg
