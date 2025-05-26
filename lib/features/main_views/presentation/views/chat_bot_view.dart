@@ -1,6 +1,6 @@
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/bot_image_with_suggetions.dart';
-import 'package:chat_bot/features/main_views/presentation/views/widgets/chat_bubble.dart';
+import 'package:chat_bot/features/main_views/presentation/views/widgets/chat_bubble_sliver_list.dart';
 import 'package:flutter/material.dart';
 
 class ChatBotView extends StatelessWidget {
@@ -21,7 +21,8 @@ class ChatBotView extends StatelessWidget {
             SliverToBoxAdapter(child: VerticalSpace(height: 20)),
             SliverToBoxAdapter(child: BotImageWithSuggetions()),
             SliverToBoxAdapter(child: VerticalSpace(height: 20)),
-            SliverToBoxAdapter(child: ChatBubble(isUserMessage: true)),
+            ChatBubbleSliverList(),
+            SliverToBoxAdapter(child: VerticalSpace(height: 20)),
           ],
         ),
       ),
