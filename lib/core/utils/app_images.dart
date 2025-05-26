@@ -30,13 +30,25 @@ class Assets {
   /// assets/images/hisoka.jpg
   static const String imagesHisoka = "assets/images/hisoka.jpg";
 
+  /// Assets for imagesHistoryIcon
+  /// assets/images/history_icon.svg
+  static const String imagesHistoryIcon = "assets/images/history_icon.svg";
+
   /// Assets for imagesLockClosedOutline
   /// assets/images/lock-closed-outline.svg
   static const String imagesLockClosedOutline = "assets/images/lock-closed-outline.svg";
 
+  /// Assets for imagesLogoutIcon
+  /// assets/images/logout_icon.svg
+  static const String imagesLogoutIcon = "assets/images/logout_icon.svg";
+
   /// Assets for imagesMailOutline
   /// assets/images/mail-outline.svg
   static const String imagesMailOutline = "assets/images/mail-outline.svg";
+
+  /// Assets for imagesNotificationsSharp
+  /// assets/images/notifications-sharp.svg
+  static const String imagesNotificationsSharp = "assets/images/notifications-sharp.svg";
 
   /// Assets for imagesOnBoardingLightImage
   /// assets/images/on_boarding_light_image.png
@@ -45,6 +57,10 @@ class Assets {
   /// Assets for imagesPersonOutline
   /// assets/images/person-outline.svg
   static const String imagesPersonOutline = "assets/images/person-outline.svg";
+
+  /// Assets for imagesPrivacyAndPolicy
+  /// assets/images/privacy_and_policy.svg
+  static const String imagesPrivacyAndPolicy = "assets/images/privacy_and_policy.svg";
 
   /// Assets for imagesProfileIcon
   /// assets/images/profile_icon.svg
@@ -61,6 +77,10 @@ class Assets {
   /// Assets for imagesSendIcon
   /// assets/images/send_icon.svg
   static const String imagesSendIcon = "assets/images/send_icon.svg";
+
+  /// Assets for imagesSettings
+  /// assets/images/settings.svg
+  static const String imagesSettings = "assets/images/settings.svg";
 
   /// Assets for imagesThreeStarsIcon
   /// assets/images/three_stars_icon.svg
