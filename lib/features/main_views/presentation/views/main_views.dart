@@ -2,6 +2,7 @@ import 'package:chat_bot/core/helpers/get_current_brightness.dart';
 import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:chat_bot/core/utils/app_images.dart';
 import 'package:chat_bot/features/main_views/presentation/views/chat_bot_view.dart';
+import 'package:chat_bot/features/main_views/presentation/views/conversations_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -23,7 +24,7 @@ class _MainViewsState extends State<MainViews> {
         index: _selectedIndex,
         children: const [
           ChatBotView(),
-          Center(child: Text('Saved View')),
+          ConversationsView(),
           Center(child: Text('Profile View')),
         ],
       ),
@@ -58,7 +59,9 @@ class _MainViewsState extends State<MainViews> {
             label: 'Chat Bot',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(Assets.imagesSavedIcon , colorFilter: const ColorFilter.mode(
+            icon: SvgPicture.asset(
+              Assets.imagesSavedIcon,
+              colorFilter: const ColorFilter.mode(
                 AppColors.grey,
                 BlendMode.srcIn,
               ),
@@ -73,7 +76,9 @@ class _MainViewsState extends State<MainViews> {
             label: 'Saved',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(Assets.imagesProfileIcon  , colorFilter: const ColorFilter.mode(
+            icon: SvgPicture.asset(
+              Assets.imagesProfileIcon,
+              colorFilter: const ColorFilter.mode(
                 AppColors.grey,
                 BlendMode.srcIn,
               ),

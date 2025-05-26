@@ -9,28 +9,26 @@ class ChatBotView extends StatelessWidget {
   static const routeName = '/chat_bot_view';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 12.0),
-        child: Stack(
-          children: [
-            CustomScrollView(
-              slivers: [
-                SliverAppBar(
-                  backgroundColor: Colors.transparent,
-                  centerTitle: true,
-                  title: Text('Chat Bot'),
-                ),
-                SliverToBoxAdapter(child: VerticalSpace(height: 20)),
-                SliverToBoxAdapter(child: BotImageWithSuggetions()),
-                SliverToBoxAdapter(child: VerticalSpace(height: 20)),
-                ChatBubbleSliverList(),
-                SliverToBoxAdapter(child: VerticalSpace(height: 80)),
-              ],
-            ),
-            Positioned(bottom: 0, left: 0, right: 0, child: ChatBotFiled()),
-          ],
-        ),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 12.0),
+      child: Stack(
+        children: [
+          CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                backgroundColor: Colors.transparent,
+                centerTitle: true,
+                title: Text('Chat Bot'),
+              ),
+              SliverToBoxAdapter(child: VerticalSpace(height: 20)),
+              SliverToBoxAdapter(child: BotImageWithSuggetions()),
+              SliverToBoxAdapter(child: VerticalSpace(height: 20)),
+              ChatBubbleSliverList(),
+              SliverToBoxAdapter(child: VerticalSpace(height: 80)),
+            ],
+          ),
+          Positioned(bottom: 0, left: 0, right: 0, child: ChatBotFiled()),
+        ],
       ),
     );
   }
