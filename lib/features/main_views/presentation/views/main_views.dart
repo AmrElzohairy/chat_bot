@@ -3,6 +3,7 @@ import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:chat_bot/core/utils/app_images.dart';
 import 'package:chat_bot/features/main_views/presentation/views/chat_bot_view.dart';
 import 'package:chat_bot/features/main_views/presentation/views/conversations_view.dart';
+import 'package:chat_bot/features/main_views/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,11 +23,7 @@ class _MainViewsState extends State<MainViews> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [
-          ChatBotView(),
-          ConversationsView(),
-          Center(child: Text('Profile View')),
-        ],
+        children: const [ChatBotView(), ConversationsView(), ProfileView()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

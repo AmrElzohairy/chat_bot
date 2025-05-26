@@ -26,6 +26,10 @@ class Assets {
   /// assets/images/google.svg
   static const String imagesGoogle = "assets/images/google.svg";
 
+  /// Assets for imagesHisoka
+  /// assets/images/hisoka.jpg
+  static const String imagesHisoka = "assets/images/hisoka.jpg";
+
   /// Assets for imagesLockClosedOutline
   /// assets/images/lock-closed-outline.svg
   static const String imagesLockClosedOutline = "assets/images/lock-closed-outline.svg";
