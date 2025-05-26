@@ -39,7 +39,7 @@ class CustomSocialMediaButton extends StatelessWidget {
         child: Row(
           children: [
             icon,
-            HorizontalSpace(width: 10),
+            const HorizontalSpace(width: 10),
             Text(buttonText, style: Theme.of(context).textTheme.bodyLarge),
           ],
         ),

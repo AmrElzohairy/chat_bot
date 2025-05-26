@@ -9,7 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
   setupServiceLocator();
-  runApp(ChatBot());
+  runApp(const ChatBot());
 }
 
 class ChatBot extends StatelessWidget {

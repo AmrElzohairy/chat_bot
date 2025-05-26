@@ -36,28 +36,28 @@ class SignUpForm extends StatelessWidget {
             slideDirection: const Offset(-0.3, 0),
             child: _buildFullNameField(),
           ),
-          VerticalSpace(height: 20),
+          const VerticalSpace(height: 20),
           // Animated Username Field
           _buildAnimatedField(
             index: 1,
             slideDirection: const Offset(0.3, 0),
             child: _buildUsernameField(),
           ),
-          VerticalSpace(height: 20),
+          const VerticalSpace(height: 20),
           // Animated Email Field
           _buildAnimatedField(
             index: 2,
             slideDirection: const Offset(-0.3, 0),
             child: _buildEmailField(),
           ),
-          VerticalSpace(height: 20),
+          const VerticalSpace(height: 20),
           // Animated Password Field
           _buildAnimatedField(
             index: 3,
             slideDirection: const Offset(0.3, 0),
             child: _buildPasswordField(),
           ),
-          VerticalSpace(height: 20),
+          const VerticalSpace(height: 20),
           // Animated Confirm Password Field
           _buildAnimatedField(
             index: 4,

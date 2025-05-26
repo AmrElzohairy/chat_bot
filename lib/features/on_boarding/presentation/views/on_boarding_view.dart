@@ -135,32 +135,34 @@ class _OnBoardingViewState extends State<OnBoardingView>
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
             children: [
-              VerticalSpace(height: 180),
+              const VerticalSpace(height: 180),
               SlideTransition(
                 position: _imageSlideAnimation,
                 child: ScaleTransition(
                   scale: _imageScaleAnimation,
-                  child: OnBoardingImage(),
+                  child: const OnBoardingImage(),
                 ),
               ),
-              VerticalSpace(height: 20),
+              const VerticalSpace(height: 20),
               OnBoardingTexts(
                 titleAnimation: _titleFadeAnimation,
                 subtitleAnimation: _subtitleFadeAnimation,
               ),
-              Spacer(),
+              const Spacer(),
               ScaleTransition(
                 scale: _buttonScaleAnimation,
                 child: CustomAppButton(
                   buttonText: 'Get Started',
                   onPressed: () {
                     CacheHelper.set(
-                        key: CacheKeys.isOnBoardingSeen, value: true);
+                      key: CacheKeys.isOnBoardingSeen,
+                      value: true,
+                    );
                     context.goNamed(SignInView.routeName);
                   },
                 ),
               ),
-              VerticalSpace(height: 80),
+              const VerticalSpace(height: 80),
             ],
           ),
         ),

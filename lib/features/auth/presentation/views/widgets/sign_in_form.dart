@@ -44,7 +44,7 @@ class SignInForm extends StatelessWidget {
             )
           else
             _buildEmailField(),
-          VerticalSpace(height: 20),
+          const VerticalSpace(height: 20),
           // Animated Password Field
           if (fieldAnimations != null && fieldAnimations!.length > 1)
             FadeTransition(

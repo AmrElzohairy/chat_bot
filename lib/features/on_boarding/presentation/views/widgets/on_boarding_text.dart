@@ -34,7 +34,7 @@ class OnBoardingTexts extends StatelessWidget {
             ),
           ),
         ),
-        VerticalSpace(height: 20),
+        const VerticalSpace(height: 20),
         FadeTransition(
           opacity: subtitleAnimation,
           child: SlideTransition(

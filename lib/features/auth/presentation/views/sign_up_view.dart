@@ -183,22 +183,22 @@ class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                VerticalSpace(height: 90),
+                const VerticalSpace(height: 90),
                 // Animated Logo
                 ScaleTransition(
                   scale: _logoScaleAnimation,
                   child: RotationTransition(
                     turns: _logoRotationAnimation,
-                    child: AppLogoWidget(),
+                    child: const AppLogoWidget(),
                   ),
                 ),
-                VerticalSpace(height: 20),
+                const VerticalSpace(height: 20),
                 // Animated Texts
                 SignUpTexts(
                   titleAnimation: _titleFadeAnimation,
                   subtitleAnimation: _subtitleFadeAnimation,
                 ),
-                VerticalSpace(height: 40),
+                const VerticalSpace(height: 40),
                 // Animated Form
                 SlideTransition(
                   position: _formSlideAnimation,
@@ -221,7 +221,7 @@ class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                VerticalSpace(height: 30),
+                const VerticalSpace(height: 30),
                 // Animated Sign Up Button
                 ScaleTransition(
                   scale: _buttonScaleAnimation,
@@ -233,7 +233,7 @@ class _SignUpViewState extends State<SignUpView> with TickerProviderStateMixin {
                     passwordController: passwordController,
                   ),
                 ),
-                VerticalSpace(height: 10),
+                const VerticalSpace(height: 10),
                 // Animated Sign In Link
                 FadeTransition(
                   opacity: _linkFadeAnimation,
