@@ -6,6 +6,8 @@ import 'package:chat_bot/features/auth/presentation/cubits/sign_in_cubit/sign_in
 import 'package:chat_bot/features/auth/presentation/cubits/sign_up_cubit/sign_up_cubit.dart';
 import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
 import 'package:chat_bot/features/auth/presentation/views/sign_up_view.dart';
+import 'package:chat_bot/features/main_views/data/repo/main_vews_repo.dart';
+import 'package:chat_bot/features/main_views/presentation/cubits/cubit/start_session_cubit.dart';
 import 'package:chat_bot/features/main_views/presentation/views/main_views.dart';
 import 'package:chat_bot/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +44,18 @@ abstract class AppRouter {
       GoRoute(
         path: MainViews.routeName,
         name: MainViews.routeName,
-        builder: (context, state) => const MainViews(),
+        builder:
+            (context, state) => MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create:
+                      (context) => StartSessionCubit(
+                        mainViewsRepo: getIt<MainViewsRepo>(),
+                      ),
+                ),
+              ],
+              child: const MainViews(),
+            ),
       ),
     ],
     errorBuilder:
