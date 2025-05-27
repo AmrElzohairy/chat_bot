@@ -1,4 +1,3 @@
-
 import 'package:chat_bot/core/helpers/get_current_brightness.dart';
 import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,3 @@
-
 import 'package:chat_bot/features/auth/data/models/sign_up_body_model.dart';
 import 'package:chat_bot/features/auth/data/repo/auth_repo.dart';
 import 'package:equatable/equatable.dart';

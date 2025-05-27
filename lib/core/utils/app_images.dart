@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesAndroid12AppLogo
   /// assets/images/android12_app_logo.png
-  static const String imagesAndroid12AppLogo = "assets/images/android12_app_logo.png";
+  static const String imagesAndroid12AppLogo =
+      "assets/images/android12_app_logo.png";
 
   /// Assets for imagesAppLogo
   /// assets/images/app_logo.svg
@@ -16,11 +17,13 @@ class Assets {
 
   /// Assets for imagesAppLuncherIcon
   /// assets/images/app_luncher_icon.png
-  static const String imagesAppLuncherIcon = "assets/images/app_luncher_icon.png";
+  static const String imagesAppLuncherIcon =
+      "assets/images/app_luncher_icon.png";
 
   /// Assets for imagesChatBotInActive
   /// assets/images/chat_bot_in_active.svg
-  static const String imagesChatBotInActive = "assets/images/chat_bot_in_active.svg";
+  static const String imagesChatBotInActive =
+      "assets/images/chat_bot_in_active.svg";
 
   /// Assets for imagesGoogle
   /// assets/images/google.svg
@@ -36,7 +39,8 @@ class Assets {
 
   /// Assets for imagesLockClosedOutline
   /// assets/images/lock-closed-outline.svg
-  static const String imagesLockClosedOutline = "assets/images/lock-closed-outline.svg";
+  static const String imagesLockClosedOutline =
+      "assets/images/lock-closed-outline.svg";
 
   /// Assets for imagesLogoutIcon
   /// assets/images/logout_icon.svg
@@ -48,11 +52,13 @@ class Assets {
 
   /// Assets for imagesNotificationsSharp
   /// assets/images/notifications-sharp.svg
-  static const String imagesNotificationsSharp = "assets/images/notifications-sharp.svg";
+  static const String imagesNotificationsSharp =
+      "assets/images/notifications-sharp.svg";
 
   /// Assets for imagesOnBoardingLightImage
   /// assets/images/on_boarding_light_image.png
-  static const String imagesOnBoardingLightImage = "assets/images/on_boarding_light_image.png";
+  static const String imagesOnBoardingLightImage =
+      "assets/images/on_boarding_light_image.png";
 
   /// Assets for imagesPersonOutline
   /// assets/images/person-outline.svg
@@ -60,7 +66,8 @@ class Assets {
 
   /// Assets for imagesPrivacyAndPolicy
   /// assets/images/privacy_and_policy.svg
-  static const String imagesPrivacyAndPolicy = "assets/images/privacy_and_policy.svg";
+  static const String imagesPrivacyAndPolicy =
+      "assets/images/privacy_and_policy.svg";
 
   /// Assets for imagesProfileIcon
   /// assets/images/profile_icon.svg
@@ -84,10 +91,10 @@ class Assets {
 
   /// Assets for imagesThreeStarsIcon
   /// assets/images/three_stars_icon.svg
-  static const String imagesThreeStarsIcon = "assets/images/three_stars_icon.svg";
+  static const String imagesThreeStarsIcon =
+      "assets/images/three_stars_icon.svg";
 
   /// Assets for imagesUnion
   /// assets/images/Union.svg
   static const String imagesUnion = "assets/images/Union.svg";
 }
-
