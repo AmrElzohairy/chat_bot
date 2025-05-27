@@ -1,26 +1,16 @@
 import 'package:equatable/equatable.dart';
 
 class StartChatSessionBody extends Equatable {
-  final String? userId;
   final String? botId;
-  final String? sessionTitle;
 
-  const StartChatSessionBody({this.userId, this.botId, this.sessionTitle});
+  const StartChatSessionBody({this.botId});
 
   factory StartChatSessionBody.fromJson(Map<String, dynamic> json) {
-    return StartChatSessionBody(
-      userId: json['userId'] as String?,
-      botId: json['botId'] as String?,
-      sessionTitle: json['sessionTitle'] as String?,
-    );
+    return StartChatSessionBody(botId: json['botId'] as String?);
   }
 
-  Map<String, dynamic> toJson() => {
-    'userId': userId,
-    'botId': botId,
-    'sessionTitle': sessionTitle,
-  };
+  Map<String, dynamic> toJson() => {'botId': botId};
 
   @override
-  List<Object?> get props => [userId, botId, sessionTitle];
+  List<Object?> get props => [botId];
 }

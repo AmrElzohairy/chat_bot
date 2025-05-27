@@ -24,6 +24,8 @@ class _ChatBotViewState extends State<ChatBotView> {
     super.initState();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return const Padding(
@@ -55,7 +57,6 @@ class _ChatBotViewState extends State<ChatBotView> {
       context.read<StartSessionCubit>().startChatSession(
         const StartChatSessionBody(
           botId: "79492a69-23a6-469a-cd59-08dd9d4bc7bf",
-          userId: "892aa5a5-2de4-4094-a192-b902f61cf17e",
         ),
       );
       log("Chat session started successfully");
