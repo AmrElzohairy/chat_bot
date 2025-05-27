@@ -5,4 +5,5 @@ abstract class ApiKeys {
   static const String refreshToken = "auth/refreshToken";
   static const String userData = "user/me";
   static const String startChatSession = "ai-chat/start-session";
+  static const String endChatSession = "ai-chat/end-session";
 }

@@ -7,4 +7,5 @@ abstract class MainViewsRepo {
   Future<Either<Failure, StartChatSessionModel>> startChatSession(
     StartChatSessionBody startChatSessionBody,
   );
+  Future<Either<Failure, void>> endChatSession(String sessionId);
 }

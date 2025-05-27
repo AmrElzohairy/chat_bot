@@ -41,4 +41,23 @@ class MainViewsRepoImpl extends MainViewsRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+  
+  @override
+  Future<Either<Failure, void>> endChatSession(String sessionId) async{
+    try {
+      await api.delete(
+        '${ApiKeys.endChatSession}/$sessionId',
+      );
+      return const Right(null);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        log(
+          "Error in MainViewsRepoImpl in endChatSession method in dio exceptions : $e",
+        );
+        return left(ServerFailure.fromDioExeptions(e));
+      }
+      log("Error in MainViewsRepoImpl in endChatSession method : $e");
+      return left(ServerFailure(e.toString()));
+    }
+  }
 }
