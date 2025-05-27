@@ -56,7 +56,6 @@ class _ChatBotViewState extends State<ChatBotView> {
         const StartChatSessionBody(
           botId: "79492a69-23a6-469a-cd59-08dd9d4bc7bf",
           userId: "892aa5a5-2de4-4094-a192-b902f61cf17e",
-          sessionTitle: "Chat Bot",
         ),
       );
       log("Chat session started successfully");

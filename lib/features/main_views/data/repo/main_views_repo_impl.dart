@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:chat_bot/core/cache/cache_constants.dart';
+import 'package:chat_bot/core/cache/cache_helper.dart';
 import 'package:chat_bot/core/errors/failure.dart';
 import 'package:chat_bot/core/networking/api_keys.dart';
 import 'package:chat_bot/core/networking/api_services.dart';
@@ -23,6 +25,10 @@ class MainViewsRepoImpl extends MainViewsRepo {
         data: startChatSessionBody.toJson(),
       );
       var sessionData = StartChatSessionModel.fromJson(response);
+      CacheHelper.setSecureData(
+        key: CacheKeys.sessionId,
+        value: sessionData.sessionId!,
+      );
       return right(sessionData);
     } on Exception catch (e) {
       if (e is DioException) {

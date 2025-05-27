@@ -8,4 +8,5 @@ class CacheKeys {
   static const String phone = 'phone';
   static const String isAuthenticated = 'isAuthenticated';
   static const String isOnBoardingSeen = 'isOnBoardingSeen';
+  static const String sessionId = 'sessionId';
 }
