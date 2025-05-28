@@ -23,7 +23,10 @@ class AuthRepoImpl extends AuthRepo {
     try {
       var response = await api.post(ApiKeys.signIn, data: signInBody.toJson());
       var user = SignInModel.fromJson(response);
-      cacheUserData(user);
+      CacheHelper.setSecureData(key: CacheKeys.accessToken, value: user.token!);
+      CacheHelper.setSecureData(key: CacheKeys.userId, value: user.userId!);
+      CacheHelper.setSecureData(key: CacheKeys.userName, value: user.userName!);
+      CacheHelper.setSecureData(key: CacheKeys.userEmail, value: user.email!);
       return right(user);
     } on Exception catch (e) {
       if (e is DioException) {
@@ -33,13 +36,6 @@ class AuthRepoImpl extends AuthRepo {
       log("Error in AuthRepoImpl in signIn method : $e");
       return left(ServerFailure(e.toString()));
     }
-  }
-
-  void cacheUserData(SignInModel user) {
-    CacheHelper.setSecureData(key: CacheKeys.accessToken, value: user.token!);
-    CacheHelper.setSecureData(key: CacheKeys.userId, value: user.userId!);
-    CacheHelper.setSecureData(key: CacheKeys.userName, value: user.userName!);
-    CacheHelper.setSecureData(key: CacheKeys.userEmail, value: user.email!);
   }
 
   @override
