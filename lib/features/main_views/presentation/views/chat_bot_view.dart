@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
-import 'package:chat_bot/features/main_views/data/models/start_chat_session_body.dart';
 import 'package:chat_bot/features/main_views/presentation/cubits/cubit/start_session_cubit.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/bot_image_with_suggetions.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/chat_bot_field.dart';
@@ -23,8 +22,6 @@ class _ChatBotViewState extends State<ChatBotView> {
     _startSesson();
     super.initState();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +51,7 @@ class _ChatBotViewState extends State<ChatBotView> {
 
   void _startSesson() {
     try {
-      context.read<StartSessionCubit>().startChatSession(
-        const StartChatSessionBody(
-          botId: "79492a69-23a6-469a-cd59-08dd9d4bc7bf",
-        ),
-      );
+      context.read<StartSessionCubit>().startChatSession();
       log("Chat session started successfully");
     } on Exception catch (e) {
       log("Error in ChatBotView in startSesson method : $e");
