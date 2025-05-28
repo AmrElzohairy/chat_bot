@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:chat_bot/core/cache/cache_constants.dart';
 import 'package:chat_bot/core/cache/cache_helper.dart';
 import 'package:chat_bot/core/utils/app_colors.dart';
@@ -27,10 +29,14 @@ class SignInBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state is SignInSuccess) {
+          log('✅ Sign in successful! User: ${state.user.userName}');
+          log('🔑 Token received: ${state.user.token?.substring(0, 20)}...');
+
           CacheHelper.set(key: CacheKeys.isAuthenticated, value: true);
           context.goNamed(MainViews.routeName);
           customSnackBar(context, 'Sign in successful!', AppColors.green);
         } else if (state is SignInFailure) {
+          log('❌ Sign in failed: ${state.errMessage}');
           customSnackBar(
             context,
             'Sign in failed: ${state.errMessage}',
