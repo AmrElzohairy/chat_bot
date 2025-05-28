@@ -79,7 +79,7 @@ class _ChatBotFiledState extends State<ChatBotFiled> {
           child: IconButton(
             onPressed: () {
               context.read<SendMessageCubit>().sendMessage(
-                sessionId!,
+                sessionId ??"91db4804-0892-4828-397c-08dd9e132b35" ,
                 ChatBodyModel(message: _messageController.text.trim()),
               );
             },
