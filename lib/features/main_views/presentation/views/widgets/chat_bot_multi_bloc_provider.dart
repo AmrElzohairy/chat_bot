@@ -1,5 +1,6 @@
 import 'package:chat_bot/core/helpers/service_locator.dart';
 import 'package:chat_bot/features/main_views/data/repo/main_vews_repo.dart';
+import 'package:chat_bot/features/main_views/presentation/cubits/send_message_cubit/send_message_cubit.dart';
 import 'package:chat_bot/features/main_views/presentation/cubits/start_session_cubit/start_session_cubit.dart';
 import 'package:chat_bot/features/main_views/presentation/views/chat_bot_view.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,9 @@ class ChatBotMultiBlocProvider extends StatelessWidget {
           create:
               (context) =>
                   StartSessionCubit(mainViewsRepo: getIt<MainViewsRepo>()),
+        ),
+        BlocProvider(
+          create: (context) => SendMessageCubit(mainViewsRepo: getIt<MainViewsRepo>()),
         ),
       ],
       child: const ChatBotView(),
