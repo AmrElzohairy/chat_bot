@@ -5,6 +5,8 @@ import 'package:chat_bot/core/cache/cache_helper.dart';
 import 'package:chat_bot/core/errors/failure.dart';
 import 'package:chat_bot/core/networking/api_keys.dart';
 import 'package:chat_bot/core/networking/api_services.dart';
+import 'package:chat_bot/features/main_views/data/models/chat_body_model.dart';
+import 'package:chat_bot/features/main_views/data/models/chat_response_model.dart';
 import 'package:chat_bot/features/main_views/data/models/start_chat_session_model.dart';
 import 'package:chat_bot/features/main_views/data/repo/main_vews_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -49,6 +51,30 @@ class MainViewsRepoImpl extends MainViewsRepo {
         return left(ServerFailure.fromDioExeptions(e));
       }
       log("Error in MainViewsRepoImpl in endChatSession method : $e");
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, ChatResponseModel>> sendMessage(
+    String sessionId,
+    ChatBodyModel chatBody,
+  ) async {
+    try {
+      var response = await api.post(
+        '${ApiKeys.sendMessage}/$sessionId',
+        data: chatBody.toJson(),
+      );
+      var chatResponse = ChatResponseModel.fromJson(response);
+      return right(chatResponse);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        log(
+          "Error in MainViewsRepoImpl in sendMessage method in dio exceptions : $e",
+        );
+        return left(ServerFailure.fromDioExeptions(e));
+      }
+      log("Error in MainViewsRepoImpl in sendMessage method : $e");
       return left(ServerFailure(e.toString()));
     }
   }

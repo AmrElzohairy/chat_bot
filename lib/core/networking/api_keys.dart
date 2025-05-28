@@ -6,4 +6,5 @@ abstract class ApiKeys {
   static const String userData = "user/me";
   static const String startChatSession = "ai-chat/start-session";
   static const String endChatSession = "ai-chat/end-session";
+  static const String sendMessage = "ai-chat/message";
 }
