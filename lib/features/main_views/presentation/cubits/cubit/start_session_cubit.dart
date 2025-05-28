@@ -6,7 +6,8 @@ import 'package:equatable/equatable.dart';
 part 'start_session_state.dart';
 
 class StartSessionCubit extends Cubit<StartSessionState> {
-  StartSessionCubit({required this.mainViewsRepo}) : super(StartSessionInitial());
+  StartSessionCubit({required this.mainViewsRepo})
+    : super(StartSessionInitial());
   final MainViewsRepo mainViewsRepo;
 
   Future<void> startChatSession() async {

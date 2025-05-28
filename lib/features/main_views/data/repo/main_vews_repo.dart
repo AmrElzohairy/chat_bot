@@ -3,7 +3,6 @@ import 'package:chat_bot/features/main_views/data/models/start_chat_session_mode
 import 'package:dartz/dartz.dart';
 
 abstract class MainViewsRepo {
-  Future<Either<Failure, StartChatSessionModel>> startChatSession(
-  );
+  Future<Either<Failure, StartChatSessionModel>> startChatSession();
   Future<Either<Failure, void>> endChatSession(String sessionId);
 }
