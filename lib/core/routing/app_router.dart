@@ -8,6 +8,7 @@ import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
 import 'package:chat_bot/features/auth/presentation/views/sign_up_view.dart';
 import 'package:chat_bot/features/main_views/presentation/views/main_views.dart';
 import 'package:chat_bot/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:chat_bot/features/privacy_policy/presentation/views/privacy_policy_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -43,6 +44,11 @@ abstract class AppRouter {
         path: MainViews.routeName,
         name: MainViews.routeName,
         builder: (context, state) => const MainViews(),
+      ),
+      GoRoute(
+        path: PrivacyPolicyView.routeName,
+        name: PrivacyPolicyView.routeName,
+        builder: (context, state) => const PrivacyPolicyView(),
       ),
     ],
     errorBuilder:

@@ -4,6 +4,7 @@ import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/profile_image_and_data.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/profile_list_tile.dart';
+import 'package:chat_bot/features/privacy_policy/presentation/views/privacy_policy_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -48,7 +49,9 @@ class ProfileView extends StatelessWidget {
           ProfileListTile(
             image: Assets.imagesPrivacyAndPolicy,
             title: "Privacy & Policy",
-            onTap: () {},
+            onTap: () {
+              context.pushNamed(PrivacyPolicyView.routeName);
+            },
           ),
           const VerticalSpace(height: 5),
           ProfileListTile(
