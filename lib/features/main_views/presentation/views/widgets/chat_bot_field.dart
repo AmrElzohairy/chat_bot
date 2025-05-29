@@ -17,18 +17,23 @@ class ChatBotFiled extends StatefulWidget {
 }
 
 class _ChatBotFiledState extends State<ChatBotFiled> {
-  List<ChatBodyModel> chatBody = [];
   late TextEditingController _messageController;
 
   @override
   void initState() {
     super.initState();
+    getSessionId();
     _messageController = TextEditingController();
   }
 
   @override
+  void dispose() {
+    _messageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final sessionId = CacheHelper.getString(key: CacheKeys.sessionId);
     return Row(
       children: [
         Expanded(
@@ -79,14 +84,20 @@ class _ChatBotFiledState extends State<ChatBotFiled> {
           child: IconButton(
             onPressed: () {
               context.read<SendMessageCubit>().sendMessage(
-                sessionId ??"91db4804-0892-4828-397c-08dd9e132b35" ,
+                getSessionId()!,
                 ChatBodyModel(message: _messageController.text.trim()),
               );
+              _messageController.clear();
             },
             icon: Icon(Icons.send, color: AppColors.white, size: 28.sp),
           ),
         ),
       ],
     );
+  }
+
+  String? getSessionId() {
+    final sessionId = CacheHelper.getString(key: CacheKeys.sessionId);
+    return sessionId;
   }
 }

@@ -21,7 +21,7 @@ class MainViewsRepoImpl extends MainViewsRepo {
     try {
       var response = await api.post(ApiKeys.startChatSession);
       var sessionData = StartChatSessionModel.fromJson(response);
-      CacheHelper.setSecureData(
+      CacheHelper.set(
         key: CacheKeys.sessionId,
         value: sessionData.sessionId!,
       );
