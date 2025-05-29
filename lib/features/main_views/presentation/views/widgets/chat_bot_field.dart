@@ -4,6 +4,7 @@ import 'package:chat_bot/core/helpers/get_current_brightness.dart';
 import 'package:chat_bot/core/utils/app_colors.dart';
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
 import 'package:chat_bot/features/main_views/data/models/chat_body_model.dart';
+import 'package:chat_bot/features/main_views/presentation/cubits/chat_messages_cubit/chat_messages_cubit.dart';
 import 'package:chat_bot/features/main_views/presentation/cubits/send_message_cubit/send_message_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -81,15 +82,36 @@ class _ChatBotFiledState extends State<ChatBotFiled> {
         CircleAvatar(
           backgroundColor: AppColors.primaryColor,
           radius: 35.r,
-          child: IconButton(
-            onPressed: () {
-              context.read<SendMessageCubit>().sendMessage(
-                getSessionId()!,
-                ChatBodyModel(message: _messageController.text.trim()),
-              );
-              _messageController.clear();
+          child: BlocListener<SendMessageCubit, SendMessageState>(
+            listener: (context, state) {
+              if (state is SendMessageSuccess) {
+                // Add bot response to chat
+                context.read<ChatMessagesCubit>().addBotResponse(
+                  state.chatResponse,
+                );
+              } else if (state is SendMessageFailure) {
+                // Handle error
+                context.read<ChatMessagesCubit>().handleMessageError(
+                  state.errMessage,
+                );
+              }
             },
-            icon: Icon(Icons.send, color: AppColors.white, size: 28.sp),
+            child: IconButton(
+              onPressed: () {
+                final message = _messageController.text.trim();
+                if (message.isNotEmpty) {
+                  // Add user message to chat immediately
+                  context.read<ChatMessagesCubit>().addUserMessage(message);
+                  // Send message to API
+                  context.read<SendMessageCubit>().sendMessage(
+                    getSessionId()!,
+                    ChatBodyModel(message: message),
+                  );
+                  _messageController.clear();
+                }
+              },
+              icon: Icon(Icons.send, color: AppColors.white, size: 28.sp),
+            ),
           ),
         ),
       ],
