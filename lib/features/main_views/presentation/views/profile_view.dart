@@ -1,8 +1,11 @@
+import 'package:chat_bot/core/cache/cache_helper.dart';
 import 'package:chat_bot/core/utils/app_images.dart';
 import 'package:chat_bot/core/utils/spacing_widgets.dart';
+import 'package:chat_bot/features/auth/presentation/views/sign_in_view.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/profile_image_and_data.dart';
 import 'package:chat_bot/features/main_views/presentation/views/widgets/profile_list_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -51,7 +54,11 @@ class ProfileView extends StatelessWidget {
           ProfileListTile(
             image: Assets.imagesLogoutIcon,
             title: "Logout",
-            onTap: () {},
+            onTap: () {
+              CacheHelper.clearAllData();
+              CacheHelper.deleteAllSecureData();
+              context.goNamed(SignInView.routeName);
+            },
           ),
         ],
       ),
