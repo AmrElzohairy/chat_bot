@@ -21,10 +21,7 @@ class MainViewsRepoImpl extends MainViewsRepo {
     try {
       var response = await api.post(ApiKeys.startChatSession);
       var sessionData = StartChatSessionModel.fromJson(response);
-      CacheHelper.set(
-        key: CacheKeys.sessionId,
-        value: sessionData.sessionId!,
-      );
+      CacheHelper.set(key: CacheKeys.sessionId, value: sessionData.sessionId!);
       return right(sessionData);
     } on Exception catch (e) {
       if (e is DioException) {

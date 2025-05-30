@@ -7,5 +7,8 @@ import 'package:dartz/dartz.dart';
 abstract class MainViewsRepo {
   Future<Either<Failure, StartChatSessionModel>> startChatSession();
   Future<Either<Failure, void>> endChatSession(String sessionId);
-  Future<Either<Failure,ChatResponseModel>> sendMessage(String sessionId,ChatBodyModel chatBody);
+  Future<Either<Failure, ChatResponseModel>> sendMessage(
+    String sessionId,
+    ChatBodyModel chatBody,
+  );
 }

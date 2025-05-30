@@ -12,25 +12,23 @@ class ChatMessagesCubit extends Cubit<ChatMessagesState> {
 
   void addUserMessage(String content) {
     log('💬 Adding user message: $content');
-    
+
     final userMessage = MessageModel.user(content: content);
     final loadingMessage = MessageModel.loading();
-    
-    final updatedMessages = List<MessageModel>.from(state.messages)
-      ..add(userMessage)
-      ..add(loadingMessage);
 
-    emit(state.copyWith(
-      messages: updatedMessages,
-      isLoading: true,
-    ));
+    final updatedMessages =
+        List<MessageModel>.from(state.messages)
+          ..add(userMessage)
+          ..add(loadingMessage);
+
+    emit(state.copyWith(messages: updatedMessages, isLoading: true));
   }
 
   void addBotResponse(ChatResponseModel response) {
     log('🤖 Adding bot response');
-    
+
     final messages = List<MessageModel>.from(state.messages);
-    
+
     // Remove the loading message (last message should be loading)
     if (messages.isNotEmpty && messages.last.isLoading) {
       messages.removeLast();
@@ -43,17 +41,14 @@ class ChatMessagesCubit extends Cubit<ChatMessagesState> {
       log('✅ Bot response added: ${response.aiResponse}');
     }
 
-    emit(state.copyWith(
-      messages: messages,
-      isLoading: false,
-    ));
+    emit(state.copyWith(messages: messages, isLoading: false));
   }
 
   void handleMessageError(String error) {
     log('❌ Message error: $error');
-    
+
     final messages = List<MessageModel>.from(state.messages);
-    
+
     // Remove the loading message
     if (messages.isNotEmpty && messages.last.isLoading) {
       messages.removeLast();
@@ -65,11 +60,7 @@ class ChatMessagesCubit extends Cubit<ChatMessagesState> {
     );
     messages.add(errorMessage);
 
-    emit(state.copyWith(
-      messages: messages,
-      isLoading: false,
-      error: error,
-    ));
+    emit(state.copyWith(messages: messages, isLoading: false, error: error));
   }
 
   void clearMessages() {

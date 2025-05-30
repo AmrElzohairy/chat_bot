@@ -17,10 +17,7 @@ class MessageModel extends Equatable {
     this.isLoading = false,
   });
 
-  factory MessageModel.user({
-    required String content,
-    String? id,
-  }) {
+  factory MessageModel.user({required String content, String? id}) {
     return MessageModel(
       id: id ?? DateTime.now().millisecondsSinceEpoch.toString(),
       content: content,
@@ -29,10 +26,7 @@ class MessageModel extends Equatable {
     );
   }
 
-  factory MessageModel.bot({
-    required String content,
-    String? id,
-  }) {
+  factory MessageModel.bot({required String content, String? id}) {
     return MessageModel(
       id: id ?? DateTime.now().millisecondsSinceEpoch.toString(),
       content: content,
@@ -41,9 +35,7 @@ class MessageModel extends Equatable {
     );
   }
 
-  factory MessageModel.loading({
-    String? id,
-  }) {
+  factory MessageModel.loading({String? id}) {
     return MessageModel(
       id: id ?? DateTime.now().millisecondsSinceEpoch.toString(),
       content: '',

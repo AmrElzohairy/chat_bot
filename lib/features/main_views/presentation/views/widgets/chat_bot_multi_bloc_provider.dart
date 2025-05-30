@@ -19,7 +19,9 @@ class ChatBotMultiBlocProvider extends StatelessWidget {
                   StartSessionCubit(mainViewsRepo: getIt<MainViewsRepo>()),
         ),
         BlocProvider(
-          create: (context) => SendMessageCubit(mainViewsRepo: getIt<MainViewsRepo>()),
+          create:
+              (context) =>
+                  SendMessageCubit(mainViewsRepo: getIt<MainViewsRepo>()),
         ),
       ],
       child: const ChatBotView(),
