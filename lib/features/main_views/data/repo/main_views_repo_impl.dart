@@ -7,6 +7,7 @@ import 'package:chat_bot/core/networking/api_keys.dart';
 import 'package:chat_bot/core/networking/api_services.dart';
 import 'package:chat_bot/features/main_views/data/models/chat_body_model.dart';
 import 'package:chat_bot/features/main_views/data/models/chat_response_model.dart';
+import 'package:chat_bot/features/main_views/data/models/saved_sesions_model.dart';
 import 'package:chat_bot/features/main_views/data/models/start_chat_session_model.dart';
 import 'package:chat_bot/features/main_views/data/repo/main_vews_repo.dart';
 import 'package:dartz/dartz.dart';
@@ -21,10 +22,7 @@ class MainViewsRepoImpl extends MainViewsRepo {
     try {
       var response = await api.post(ApiKeys.startChatSession);
       var sessionData = StartChatSessionModel.fromJson(response);
-      CacheHelper.set(
-        key: CacheKeys.sessionId,
-        value: sessionData.sessionId!,
-      );
+      CacheHelper.set(key: CacheKeys.sessionId, value: sessionData.sessionId!);
       return right(sessionData);
     } on Exception catch (e) {
       if (e is DioException) {
@@ -75,6 +73,29 @@ class MainViewsRepoImpl extends MainViewsRepo {
         return left(ServerFailure.fromDioExeptions(e));
       }
       log("Error in MainViewsRepoImpl in sendMessage method : $e");
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<SavedSessionData>>> getSavedSessions() async {
+    try {
+      List<SavedSessionData> savedSessions = [];
+      var response = await api.get(ApiKeys.savedSessions);
+      for (var item in response['items']) {
+        var sessionData = SavedSessionData.fromJson(item);
+        savedSessions.add(sessionData);
+      }
+
+      return right(savedSessions);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        log(
+          "Error in MainViewsRepoImpl in getSavedSessions method in dio exceptions : $e",
+        );
+        return left(ServerFailure.fromDioExeptions(e));
+      }
+      log("Error in MainViewsRepoImpl in getSavedSessions method : $e");
       return left(ServerFailure(e.toString()));
     }
   }
