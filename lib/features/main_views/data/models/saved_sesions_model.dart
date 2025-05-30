@@ -3,10 +3,7 @@ class Message {
   final String messageContent;
   final DateTime sentAt;
 
-  Message({
-    required this.messageContent,
-    required this.sentAt,
-  });
+  Message({required this.messageContent, required this.sentAt});
 
   factory Message.fromJson(Map<String, dynamic> json) {
     return Message(
@@ -24,7 +21,7 @@ class Message {
 }
 
 // Chat session item model
-class ChatSessionData {
+class SavedSessionData {
   final String sessionId;
   final String userId;
   final String userName;
@@ -36,7 +33,7 @@ class ChatSessionData {
   final DateTime? endedAt;
   final bool isActive;
 
-  ChatSessionData({
+  SavedSessionData({
     required this.sessionId,
     required this.userId,
     required this.userName,
@@ -49,19 +46,23 @@ class ChatSessionData {
     required this.isActive,
   });
 
-  factory ChatSessionData.fromJson(Map<String, dynamic> json) {
-    return ChatSessionData(
+  factory SavedSessionData.fromJson(Map<String, dynamic> json) {
+    return SavedSessionData(
       sessionId: json['sessionId'] ?? '',
       userId: json['userId'] ?? '',
       userName: json['userName'] ?? '',
       botId: json['botId'] ?? '',
       botName: json['botName'] ?? '',
-      userMessages: (json['userMessages'] as List<dynamic>?)
-          ?.map((messageJson) => Message.fromJson(messageJson))
-          .toList() ?? [],
-      botMessages: (json['botMessages'] as List<dynamic>?)
-          ?.map((messageJson) => Message.fromJson(messageJson))
-          .toList() ?? [],
+      userMessages:
+          (json['userMessages'] as List<dynamic>?)
+              ?.map((messageJson) => Message.fromJson(messageJson))
+              .toList() ??
+          [],
+      botMessages:
+          (json['botMessages'] as List<dynamic>?)
+              ?.map((messageJson) => Message.fromJson(messageJson))
+              .toList() ??
+          [],
       startedAt: DateTime.parse(json['startedAt']),
       endedAt: json['endedAt'] != null ? DateTime.parse(json['endedAt']) : null,
       isActive: json['isActive'] ?? false,
@@ -82,7 +83,8 @@ class ChatSessionData {
       'isActive': isActive,
     };
   }
+
+  map(Function(dynamic e) param0) {}
 }
 
 // Main response model
-

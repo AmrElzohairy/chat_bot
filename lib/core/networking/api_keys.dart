@@ -7,4 +7,5 @@ abstract class ApiKeys {
   static const String startChatSession = "ai-chat/start-session";
   static const String endChatSession = "ai-chat/end-session";
   static const String sendMessage = "ai-chat/message";
+  static const String savedSessions = "user/me/sessions";
 }
