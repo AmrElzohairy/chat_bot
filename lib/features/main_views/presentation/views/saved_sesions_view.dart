@@ -1,8 +1,8 @@
 import 'package:chat_bot/features/main_views/presentation/views/widgets/conversations_sliver_list.dart';
 import 'package:flutter/material.dart';
 
-class ConversationsView extends StatelessWidget {
-  const ConversationsView({super.key});
+class SavedSesionsView extends StatelessWidget {
+  const SavedSesionsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ConversationsView extends StatelessWidget {
           title: Text('Conversations'),
         ),
         SliverToBoxAdapter(child: Divider(height: 1, thickness: 2)),
-        ConversationsSliverList(),
+        SevedSessionsSliverList(),
       ],
     );
   }
